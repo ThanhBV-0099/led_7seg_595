@@ -54,7 +54,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint16_t dem;
+uint64_t dem=900000;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -178,15 +178,15 @@ unsigned char led7[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90};
 		}
 		else if (dem<10000)
 		{
-			
+		xuat_full(0xff,0xff,0xff,0xff,led7[dem/1000],led7[dem%1000/100],led7[dem%1000/10],led7[dem%1000%10]);		
 		}
 		else if (dem<100000)
 		{
-			
+		xuat_full(0xff,0xff,0xff,led7[dem/10000],led7[dem%10000/1000],led7[dem%10000%1000/100],led7[dem%10000%1000%100/10],led7[dem%10000%1000%100%10]);		
 		}
 		else if (dem<1000000)
 		{
-			
+		xuat_full(0xff,0xff,led7[dem/100000],led7[dem%100000],led7[dem%100000/10000],led7[dem%100000%10000/1000],led7[dem%10000%1000/10],led7[dem%10000%1000%10]);		
 		}
 		else if (dem<10000000)
 		{
